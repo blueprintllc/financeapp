@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :ideas
+   map.root :controller => "stocks"
+	 map.resources :ideas
 
   map.resources :users
 
