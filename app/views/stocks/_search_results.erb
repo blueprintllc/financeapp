@@ -1,0 +1,12 @@
+<% if @stocks.empty? %>
+	<%="Nothing found!"%><br/><br/>
+    <%=link_to "Click to add new", :controller=>'Stocks', :action=>'new', :params=>{:ticker=>params[:search]} %> <br/>
+	<%else%>
+	<%="Here are your results!"%>
+<% end%>
+<br/>
+    <% @stocks.each do |stock| %>
+<%= link_to stock.ticker, 
+    :action => 'show', :id => stock.id  %></li>
+  <% end %>
+

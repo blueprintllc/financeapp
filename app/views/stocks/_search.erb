@@ -1,0 +1,7 @@
+
+<% params[:search]="Search Stocks..."%>
+<% form_tag :controller => 'stocks', :action=>'search', :method=>'get' do %>
+	<%= text_field_tag :search, params[:search], :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur => "if(this.value=='') this.value=this.defaultValue;" %>
+	<%= submit_tag "Search", :name => nil %>
+<%end%>
+	

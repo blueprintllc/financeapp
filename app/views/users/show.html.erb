@@ -1,0 +1,25 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+
+<p>
+
+<% x= 1%>
+  <b>Has Ideas:</b>
+<% for test in @tests %>
+<p>
+  <%=link_to "Idea #{x}", :controller=>'Ideas', :action=>'show', :id => test.id %> <br/>
+  <% x+=1 %>
+<%end%>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

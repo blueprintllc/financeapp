@@ -1,0 +1,38 @@
+<p>
+  <b>Ticker:</b>
+  <%=h @stock.ticker.upcase %>
+</p>
+
+<p>
+  <b>Current price:</b>
+  <%=h @x[:price] %>
+</p>
+
+<p>
+  <b>Change:</b>
+  <%=h @x[:change] %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%=h commify(@x[:volume]) %>
+</p>
+
+
+<p>
+
+<% x= 1 %>
+  <b>Has Ideas:</b>
+<% for test in @tests %>
+<p>
+  <%=link_to "#{test.title} - Submitted by #{test.user.name}", :controller=>'Ideas', :action=>'show', :id => test.id %> <br/>
+  <% x+=1 %>
+<%end%>
+</p>
+<br/>
+
+
+  <%=link_to "New Idea", :controller=>'Ideas', :action=>'new', :stock_id => @stock.id%> <br/>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

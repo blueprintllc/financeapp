@@ -1,0 +1,32 @@
+<h1>Editing idea</h1>
+
+<% form_for(@idea) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :stock_id %><br />
+    <%= f.text_field :stock_id %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :price_target %><br />
+    <%= f.text_field :price_target %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @idea %> |
+<%= link_to 'Back', ideas_path %>

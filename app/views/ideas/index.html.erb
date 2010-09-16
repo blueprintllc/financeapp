@@ -1,0 +1,28 @@
+<h1>Listing ideas</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Stock</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price target</th>
+  </tr>
+
+<% @ideas.each do |idea| %>
+  <tr>
+    <td><%=h idea.user_id %></td>
+    <td><%=h idea.stock_id %></td>
+    <td><%=h idea.title %></td>
+    <td><%=h idea.description %></td>
+    <td><%=h idea.ptarget %></td>
+    <td><%= link_to 'Show', idea %></td>
+    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+    <td><%= link_to 'Destroy', idea, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New idea', new_idea_path %>

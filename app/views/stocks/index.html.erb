@@ -1,0 +1,30 @@
+<h1>Listing stocks</h1>
+
+<table>
+  <tr>
+    <th>Ticker</th>
+    <th>Price</th>
+    <th>Change</th>
+    <th>Volume</th>
+
+<% @stocks.each do |stock| %>
+    
+<% x= Stock.pullinfo(stock.ticker) %>
+
+  <tr>
+  <td><%=h stock.ticker.upcase %></td>
+ <td><%=h x[:price] %></td>
+   <td><%=h x[:change] %></td>
+ <td><%=h commify(x[:volume]) %></td> 
+
+    <td><%= link_to 'Show', stock %></td>
+    <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    <td><%= link_to 'Destroy', stock, :confirm => 'Are you sure?', :method => :delete %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New stock', new_stock_path %>

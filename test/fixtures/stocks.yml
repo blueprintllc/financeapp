@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ticker: MyString
+  price: 
+  change: 
+  volume: 
+
+two:
+  ticker: MyString
+  price: 
+  change: 
+  volume: 

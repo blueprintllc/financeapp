@@ -1,0 +1,47 @@
+<p>
+  <b>User:</b>
+  <%=h @idea.user.name %>
+</p>
+
+<p>
+  <b>Stock:</b>
+<%= @idea.stock_id %>
+</p>
+
+<p>
+  <b>Stock Name:</b>
+<%= @idea.stock.ticker %>
+</p>
+
+
+<% x = Stock.pullinfo(@idea.stock.ticker) %>
+<p>
+  <b>Current Stock Price:</b>
+<%= x[:price] %>
+</p>
+
+
+
+<p>
+  <b>Title:</b>
+<%= @idea.title %>
+</p>
+
+<p>
+  <b>Price Target:</b>
+<%= @idea.ptarget %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=@idea.description %>
+</p>
+--------------------------------<br/>
+ <div id="comments_container">
+   <%= render_threaded_comments(@idea.comments) -%>
+   <%= render_comment_form(@new_comment) -%>
+ </div>
+
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
