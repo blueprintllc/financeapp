@@ -1,18 +1,9 @@
 <p>
-  <b>Name:</b>
-  <%=h @user.name %>
+  <%= "Welcome #{@user.login}" %>
 </p>
-
-<p>
-  <b>Email:</b>
-  <%=h @user.email %>
-</p>
-
-
-<p>
 
 <% x= 1%>
-  <b>Has Ideas:</b>
+  <b>You have the following ideas:</b>
 <% for test in @tests %>
 <p>
   <%=link_to "Idea #{x}", :controller=>'Ideas', :action=>'show', :id => test.id %> <br/>
